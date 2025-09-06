@@ -1,4 +1,9 @@
 site_name: Mental Drawer
 site_url: https://okmi-mizu.github.io/mental-drawer/
 theme:
-  name: cyborg
+  name: mkdocs
+  color_mode: dark
+  custom_dir: docs/overrides
+
+extra_css:
+  - css/extra.css
