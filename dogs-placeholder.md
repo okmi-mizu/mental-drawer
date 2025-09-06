@@ -1,7 +1,3 @@
-
-
-# Web Sight
-
 # Dogs
 
 Dogs are loyal and friendly animals that have been companions to humans for thousands of years. They come in a wide variety of breeds, sizes, and temperaments.
@@ -21,9 +17,4 @@ Dogs are loyal and friendly animals that have been companions to humans for thou
 ## Conclusion
 
 Dogs make wonderful pets and are valued members of many families around the world.
-
-
-
-I am a web page that can be seen, using sight, with a purpose that is yet to be seen....
-
 
