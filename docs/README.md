@@ -2,6 +2,6 @@
 
 # Web Sight
 
-I am a page, with a purpose that is yet to be seen....
+I am a web page that can be seen, using sight, with a purpose that is yet to be seen....
 
 
