@@ -1,0 +1,87 @@
+/* Dark Brown Theme */
+:root {
+  --theme-color: #D2691E;
+  --bg-color: #2F1B14;
+  --sidebar-bg: #4A2C20;
+  --content-bg: #2F1B14;
+  --text-color: #F5DEB3;
+  --text-muted: #CD853F;
+  --border-color: rgba(210, 105, 30, 0.2);
+  --code-bg: #3C241A;
+  --highlight-bg: rgba(210, 105, 30, 0.1);
+  --heading-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+}
+
+.sidebar ul li a {
+  color: var(--text-color);
+}
+
+.sidebar ul li a:hover {
+  color: var(--theme-color);
+}
+
+.sidebar ul li.active > a {
+  color: var(--theme-color);
+}
+
+.markdown-section {
+  background-color: var(--content-bg);
+}
+
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3,
+.markdown-section h4,
+.markdown-section h5,
+.markdown-section h6,
+.markdown-section strong,
+.markdown-section h1 a,
+.markdown-section h2 a,
+.markdown-section h3 a,
+.markdown-section h4 a,
+.markdown-section h5 a,
+.markdown-section h6 a,
+.markdown-section h1 span,
+.markdown-section h2 span,
+.markdown-section h3 span,
+.markdown-section h4 span,
+.markdown-section h5 span,
+.markdown-section h6 span,
+h1, h2, h3, h4, h5, h6, strong,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+  color: var(--heading-color) !important;
+  font-weight: 600;
+}
+
+.markdown-section a {
+  color: var(--theme-color);
+}
+
+.markdown-section code {
+  background-color: var(--code-bg);
+  color: var(--text-color);
+}
+
+.markdown-section pre {
+  background-color: var(--code-bg);
+}
+
+.markdown-section blockquote {
+  border-left: 4px solid var(--theme-color);
+  background-color: var(--highlight-bg);
+}
+
+.progress {
+  background-color: var(--theme-color);
+}

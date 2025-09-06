@@ -1,0 +1,92 @@
+/* Theme Switcher Styles */
+.theme-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  padding: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.theme-switcher-label {
+  color: white;
+  font-size: 12px;
+  margin-bottom: 5px;
+  display: block;
+  text-align: center;
+}
+
+.theme-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.theme-btn {
+  width: 30px;
+  height: 30px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1);
+  border-color: white;
+}
+
+.theme-btn.active {
+  border-color: white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.theme-btn.blue {
+  background: linear-gradient(135deg, #1a237e, #4A90E2);
+}
+
+.theme-btn.brown {
+  background: linear-gradient(135deg, #2F1B14, #D2691E);
+}
+
+.theme-btn.purple {
+  background: linear-gradient(135deg, #1A0E2E, #9C27B0);
+}
+
+.theme-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.theme-btn.active::after {
+  opacity: 1;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .theme-switcher {
+    top: 10px;
+    right: 10px;
+    padding: 8px;
+  }
+
+  .theme-btn {
+    width: 25px;
+    height: 25px;
+  }
+
+  .theme-buttons {
+    gap: 3px;
+  }
+}
