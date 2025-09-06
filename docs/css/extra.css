@@ -1,7 +1,0 @@
-/* Hide the default "Documentation built with MkDocs." footer link */
-footer a[href*="mkdocs.org"],
-.md-footer a[href*="mkdocs.org"],
-.site-footer a[href*="mkdocs.org"] {
-  display: none !important;
-}
-

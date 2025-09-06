@@ -1,4 +1,12 @@
 
+
+
+`npm i docsify-cli -g`
+https://docsify.js.org/#/quickstart?id=initialize
+
+` docsify serve ./docs`
+
+
 https://squidfunk.github.io/mkdocs-material/getting-started/
 pip install mkdocs-material
 

@@ -1,0 +1,2 @@
+* [Home](/)
+* [Contact](contact.md)
