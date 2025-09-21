@@ -21,7 +21,7 @@ I want to get files from the remote repository and merge them into my local repo
 `git-main-pull`
 
 I want to push my local commits to the remote repository and to my website.
-`git-main-pull`
+`git-main-push`
 
 
 
