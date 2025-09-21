@@ -16,7 +16,7 @@ I want to get files from the remote repository and merge them into my local repo
 `git-main-pull`
 
 
-`git-main-pull`
+`git-main-push`
 
 
 
