@@ -18,3 +18,4 @@ Dogs are loyal and friendly animals that have been companions to humans for thou
 
 Dogs make wonderful pets and are valued members of many families around the world.
 
+Hot dogs are only 65% real dog.
