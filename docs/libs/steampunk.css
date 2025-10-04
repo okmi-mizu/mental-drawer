@@ -1,0 +1,277 @@
+/* Steampunk Theme with Parallax Effects */
+:root {
+    --gear-size: 120px;
+    --pipe-width: 80px;
+    --transition-speed: 0.8s;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: background-color var(--transition-speed) ease;
+}
+
+/* Background Themes for Each Section */
+body.theme-blue {
+    background: linear-gradient(135deg, #1a3a52 0%, #2c5f7f 100%);
+    color: #e0e0e0;
+}
+
+body.theme-brown {
+    background: linear-gradient(135deg, #1a1410 0%, #2d1f1a 100%);
+    color: #d0c0b0;
+}
+
+body.theme-yellow {
+    background: linear-gradient(135deg, #fffacd 0%, #fff8dc 100%);
+    color: #333;
+}
+
+body.theme-purple {
+    background: linear-gradient(135deg, #2d1b3d 0%, #4a2c5e 100%);
+    color: #e8d5f0;
+}
+
+/* Steampunk Container */
+#steampunk-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Gears on the Left Side */
+.gear-container {
+    position: fixed;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    pointer-events: none;
+    z-index: 1001;
+}
+
+.gear {
+    width: var(--gear-size);
+    height: var(--gear-size);
+    transition: transform 0.1s linear;
+}
+
+.gear:nth-child(1) {
+    top: 80px;
+}
+
+.gear:nth-child(2) {
+    top: 240px;
+}
+
+.gear:nth-child(3) {
+    top: 400px;
+}
+
+.gear:nth-child(4) {
+    top: 560px;
+}
+
+/* Pipes System */
+.pipe-system {
+    position: fixed;
+    top: 100px;
+    right: 50%;
+    transform: translateX(50%);
+    pointer-events: all;
+    z-index: 1002;
+}
+
+.pipe {
+    position: relative;
+}
+
+.pipe-link {
+    display: block;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #8b7355 0%, #6b5345 50%, #8b7355 100%);
+    border: 3px solid #4a3728;
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3), 0 4px 10px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+    margin: 20px 0;
+    position: relative;
+    pointer-events: all;
+}
+
+.pipe-link:hover {
+    transform: scale(1.05);
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3), 0 6px 15px rgba(0,0,0,0.6);
+}
+
+/* Water Drips from Merch Pipe */
+.water-drip {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #4db8ff 0%, #0077cc 100%);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    animation: drip 2s infinite;
+}
+
+@keyframes drip {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        top: 300px;
+        opacity: 0;
+    }
+}
+
+.water-drip:nth-child(1) { animation-delay: 0s; left: 30%; }
+.water-drip:nth-child(2) { animation-delay: 0.5s; left: 50%; }
+.water-drip:nth-child(3) { animation-delay: 1s; left: 70%; }
+.water-drip:nth-child(4) { animation-delay: 1.5s; left: 40%; }
+
+/* Steam Effect near Video Link */
+.steam {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(200,200,200,0) 70%);
+    border-radius: 50%;
+    opacity: 0;
+    animation: steam-rise 3s infinite;
+    left: -50px;
+    filter: blur(8px);
+}
+
+@keyframes steam-rise {
+    0% {
+        top: 20px;
+        opacity: 0;
+        transform: scale(0.5) translateX(0);
+    }
+    20% {
+        opacity: 0.8;
+    }
+    100% {
+        top: -80px;
+        opacity: 0;
+        transform: scale(1.5) translateX(20px);
+    }
+}
+
+.steam:nth-child(1) { animation-delay: 0s; }
+.steam:nth-child(2) { animation-delay: 1s; }
+.steam:nth-child(3) { animation-delay: 2s; }
+
+/* Donation Bucket */
+.donation-bucket {
+    position: fixed;
+    bottom: 100px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 150px;
+    height: 120px;
+    pointer-events: all;
+    z-index: 1002;
+}
+
+/* Train Loading Indicator */
+.train-container {
+    position: fixed;
+    bottom: 30px;
+    right: -200px;
+    width: 200px;
+    height: 100px;
+    z-index: 1003;
+    transition: right 2s ease-in-out;
+    pointer-events: none;
+}
+
+body.loading .train-container {
+    right: 20px;
+}
+
+.train {
+    width: 100%;
+    height: 100%;
+    animation: train-chug 0.5s infinite;
+}
+
+@keyframes train-chug {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+}
+
+.train-smoke {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(150,150,150,0.7) 0%, rgba(100,100,100,0) 70%);
+    border-radius: 50%;
+    top: -10px;
+    left: 30px;
+    animation: smoke-puff 2s infinite;
+    filter: blur(4px);
+}
+
+@keyframes smoke-puff {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-60px) scale(1.5);
+    }
+}
+
+.train-smoke:nth-child(2) { animation-delay: 0.5s; }
+.train-smoke:nth-child(3) { animation-delay: 1s; }
+.train-smoke:nth-child(4) { animation-delay: 1.5s; }
+
+/* Content Area */
+#app {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    min-height: 2000px;
+    margin-left: 160px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gear-container {
+        display: none;
+    }
+
+    #app {
+        margin-left: 20px;
+    }
+
+    .pipe-system {
+        top: 50px;
+        scale: 0.8;
+    }
+}
+
