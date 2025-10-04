@@ -59,14 +59,20 @@
                     </filter>
                 </defs>
                 <g filter="url(#shadow-${color})">
-                    <!-- Outer gear teeth -->
-                    <path d="M50,10 L55,20 L60,10 L65,20 L70,10 L75,20 L80,15 L85,25 L88,20 L90,30 L92,28 L93,38 L93,42 L92,52 L90,50 L88,60 L85,55 L80,65 L75,60 L70,70 L65,60 L60,70 L55,60 L50,70 L45,60 L40,70 L35,60 L30,70 L25,60 L20,65 L15,55 L12,60 L10,50 L8,52 L7,42 L7,38 L8,28 L10,30 L12,20 L15,25 L20,15 L25,20 L30,10 L35,20 L40,10 L45,20 Z" 
-                          fill="${color}" stroke="#333" stroke-width="1"/>
+                    <!-- Perfectly circular gear with 12 evenly spaced teeth -->
+                    <circle cx="50" cy="50" r="35" fill="${color}" stroke="#333" stroke-width="1"/>
+                    <!-- 12 teeth around the circle -->
+                    ${Array.from({length: 12}, (_, i) => {
+                        const angle = (i * 30 - 90) * Math.PI / 180; // 30 degrees apart, start at top
+                        const x = 50 + Math.cos(angle) * 40;
+                        const y = 50 + Math.sin(angle) * 40;
+                        return `<rect x="${x-3}" y="${y-5}" width="6" height="10" fill="${color}" stroke="#333" stroke-width="0.5" transform="rotate(${i * 30} ${x} ${y})"/>`;
+                    }).join('')}
                     <!-- Inner circle -->
                     <circle cx="50" cy="50" r="20" fill="#666" stroke="#333" stroke-width="2"/>
                     <!-- Center hole -->
                     <circle cx="50" cy="50" r="8" fill="#333"/>
-                    <!-- Bolt details -->
+                    <!-- Bolt details at cardinal points -->
                     <circle cx="50" cy="35" r="2" fill="#888"/>
                     <circle cx="65" cy="50" r="2" fill="#888"/>
                     <circle cx="50" cy="65" r="2" fill="#888"/>
@@ -294,4 +300,3 @@
     }
 
 })();
-

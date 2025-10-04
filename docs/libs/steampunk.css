@@ -123,30 +123,30 @@ body.theme-purple {
     border-radius: 50% 50% 50% 0;
     transform: rotate(45deg);
     opacity: 0;
-    animation: drip 2s infinite;
+    animation: drip 3s infinite ease-in;
 }
 
 @keyframes drip {
     0% {
-        top: 0;
+        top: 60px;
         opacity: 0;
     }
-    10% {
+    5% {
         opacity: 1;
     }
-    90% {
+    95% {
         opacity: 1;
     }
     100% {
-        top: 300px;
+        top: calc(100vh - 220px);
         opacity: 0;
     }
 }
 
 .water-drip:nth-child(1) { animation-delay: 0s; left: 30%; }
-.water-drip:nth-child(2) { animation-delay: 0.5s; left: 50%; }
-.water-drip:nth-child(3) { animation-delay: 1s; left: 70%; }
-.water-drip:nth-child(4) { animation-delay: 1.5s; left: 40%; }
+.water-drip:nth-child(2) { animation-delay: 0.75s; left: 50%; }
+.water-drip:nth-child(3) { animation-delay: 1.5s; left: 70%; }
+.water-drip:nth-child(4) { animation-delay: 2.25s; left: 40%; }
 
 /* Steam Effect near Video Link */
 .steam {
@@ -274,4 +274,3 @@ body.loading .train-container {
         scale: 0.8;
     }
 }
-
