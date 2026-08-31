@@ -1,3 +1,7 @@
 * [Home](/)
-* [Contact](contact.md)
 * [Depth](Depth.md)
+* [Videos](videos.md)
+* [Merch](merch.md)
+* [Donations](donations.md)
+* [Contact](contact.md)
+* [Settings](settings.md)

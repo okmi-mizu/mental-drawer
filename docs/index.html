@@ -1,28 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="brass" data-mode="auto" data-resolved="light" data-sidebar="open">
 <head>
     <meta charset="UTF-8">
     <title>Mental Drawer</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="description" content="Mental Drawer Documentation">
+    <meta name="description" content="Mental Drawer — a workshop of half-finished thoughts.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-    <link rel="stylesheet" href="libs/theme-switcher.css">
-    <link rel="stylesheet" href="libs/steampunk.css">
+    <meta name="theme-color" content="#f6f1e7">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g fill='none' stroke='%23b8860b' stroke-width='2.2' stroke-linejoin='round'><path d='M12 2.6l1.7.9 1.9-.3.9 1.7 1.7.9-.3 1.9.9 1.7-1.3 1.4v1.9l-1.9.6-1 1.6-1.9-.2-1.6 1.1-1.6-1.1-1.9.2-1-1.6-1.9-.6v-1.9L4.5 9.4l.9-1.7-.3-1.9 1.7-.9.9-1.7 1.9.3z'/><circle cx='12' cy='10' r='3'/></g></svg>">
+    <link rel="stylesheet" href="libs/theme.css">
+    <script>
+        /* Stamp saved preferences before first paint so the page never flashes
+           the wrong theme. Kept inline and tiny on purpose. */
+        (function () {
+            var r = document.documentElement;
+            function get(k, ok, dflt) {
+                try {
+                    var v = localStorage.getItem('md:' + k);
+                    return ok.indexOf(v) > -1 ? v : dflt;
+                } catch (e) { return dflt; }
+            }
+            var mode = get('mode', ['light', 'dark', 'auto'], 'auto');
+            var dark = mode === 'dark' ||
+                (mode === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            r.setAttribute('data-mode', mode);
+            r.setAttribute('data-resolved', dark ? 'dark' : 'light');
+            r.setAttribute('data-theme', get('theme', ['brass', 'copper', 'verdigris'], 'brass'));
+            r.setAttribute('data-motion', get('motion', ['on', 'off'], 'on'));
+            r.setAttribute('data-sidebar',
+                window.matchMedia('(max-width: 768px)').matches
+                    ? 'closed'
+                    : get('sidebar', ['open', 'closed'], 'open'));
+        })();
+    </script>
 </head>
 <body>
-<div id="app">Please wait...</div>
+
+<header class="md-header">
+    <button class="md-iconbtn md-burger-btn" type="button" aria-expanded="true" aria-label="Collapse navigation" aria-controls="md-sidebar">
+        <span class="md-burger" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+    <h1 class="md-header__title"><a href="#/">Mental Drawer</a></h1>
+    <span class="md-header__spacer"></span>
+    <button class="md-iconbtn md-mode-btn" type="button" aria-label="Switch to dark mode"></button>
+</header>
+
+<div class="md-scrim" aria-hidden="true"></div>
+
+<div id="app">Winding the mainspring&hellip;</div>
+
+<button class="md-gear" type="button" aria-label="Back to top"></button>
+
 <script>
     window.$docsify = {
         name: 'Mental Drawer',
         repo: '',
         loadSidebar: true,
-        subMaxLevel: 2
-    }
+        subMaxLevel: 2,
+        auto2top: true,
+        maxLevel: 3
+    };
 </script>
-<!-- Docsify v4 -->
-<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-<script src="libs/theme-switcher.js"></script>
-<script src="libs/steampunk.js"></script>
+<script src="libs/app.js"></script>
+<script src="libs/docsify-4.js"></script>
 </body>
 </html>
